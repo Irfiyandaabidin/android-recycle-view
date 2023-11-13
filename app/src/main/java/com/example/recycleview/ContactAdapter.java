@@ -36,12 +36,16 @@ public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.ContactV
 
     @Override
     public void onBindViewHolder(@NonNull ContactViewHolder holder, int position) {
-
+        holder.bindData(contactList.get(position));
     }
 
     @Override
     public int getItemCount() {
         return contactList.size();
+    }
+
+    public void setItem(List<ContactModel> item) {
+        contactList = item;
     }
 
     public class ContactViewHolder extends RecyclerView.ViewHolder{
